@@ -1,11 +1,12 @@
-var time = 0;
-var timer = setInterval(function (params) {
-    time +=2;
-    console.log(time + ' seconds have passed');
-    if(time>5){
-        clearInterval(timer);
-    }
-},2000);
+//Modules
+//Normal Function
+function sayHi(){
+    console.log('HI');
+}
+sayHi()
 
-console.log(__dirname)
-console.log(__filename)
+//Function Expression
+var sayBye =function(){
+    console.log('BYE');
+}
+sayBye()
