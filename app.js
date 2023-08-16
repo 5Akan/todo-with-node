@@ -1,12 +1,3 @@
-//Modules
-//Normal Function
-function sayHi(){
-    console.log('HI');
-}
-sayHi()
-
-//Function Expression
-var sayBye =function(){
-    console.log('BYE');
-}
-sayBye()
+//Using Require
+var counter = require('./count');
+console.log(counter(['Akanimoh', 'Rabi', 'Itoro', 'Uwem']));
