@@ -13,20 +13,21 @@
 
 //exporting counter using counter properties from export object
 
-var counter = function (arr) {
+// var counter = function (arr) {
 
-    return 'There are ' + arr.length + ' elements in this array';
+//     return 'There are ' + arr.length + ' elements in this array';
     
-}
+// }
 
-var adder = function(x,y){
-    return `The sum of the two numbers is ${x+y}`;
-}
+// var adder = function(x,y){
+//     return `The sum of the two numbers is ${x+y}`;
+// }
 
-var pi = 3.142;
+// var pi = 3.142;
 
-module.exports = {
-    counter:counter,
-    adder:adder,
-    pi:pi
-}
+// module.exports = {
+//     counter:counter,
+//     adder:adder,
+//     pi:pi
+// }
+
