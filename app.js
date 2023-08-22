@@ -49,9 +49,37 @@
 // fs.writeFileSync('writeMe.txt',readMe);
 
 //Asynchronous method
+// var fs = require('fs');
+// var readMe = fs.readFile('readMe.txt', 'utf8', function(err,data){
+//     fs.writeFile('writeMe.txt',data,function(err,data){
+
+//     } );
+// });
+
+
+//Creating and Removing Directories
 var fs = require('fs');
-var readMe = fs.readFile('readMe.txt', 'utf8', function(err,data){
-    fs.writeFile('writeMe.txt',data,function(err,data){
-        
-    } );
-});
+
+//For removing or deleting a file
+// fs.unlink('writeMe.txt',function(err,data){
+//     })
+
+//Synchronous method
+//For making or creating directory or new folder
+// fs.mkdirSync('newStuff');
+//For removing or deleting a Directory
+// fs.rmdirSync('newStuff');
+
+//Asynchronous method
+// fs.mkdir('newStuff',function(){
+//     fs.readFile('readMe.txt','utf8',function(err,data){
+//        fs.writeFile('./newStuff/writeMe.txt',data,function(err,data){})
+//     })
+//       });
+
+//Removes file first then the folder that housed it
+fs.unlink('./newStuff/writeMe.txt',function(){
+    fs.rmdir('newStuff',function(){}) 
+})
+
+// Next Video 11
