@@ -18,3 +18,13 @@
 //Video 14
 var http = require('http');
 var fs = require('fs');
+
+var myReadStream = fs.createReadStream(__dirname + '/readMe.txt','utf8');
+
+//createReadStream has an eventlistener to listen to when the buffer sends a chunk of data
+//Below it listens and fires the function when it receives a chunk of data
+myReadStream.on('data',function (chunk) {
+    console.log('New Chunk received')
+    console.log(chunk) 
+
+})
