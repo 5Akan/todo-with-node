@@ -44,8 +44,26 @@
 
 // }
 
-//Video 16
+//Video 16 and 17
 //Pipe..short of what is up
+// var http = require('http');
+// var fs = require('fs');
+
+// var server = http.createServer(function (req,res) {//A way to deal with request is using a function
+//     console.log('Request was made: ' + req.url);
+//     //Response Headers syntax
+//     // res.writeHead(status,content-type)
+//     res.writeHead(200,{'Content-Type':'text/html'})
+//     var myReadStream = fs.createReadStream(__dirname + '/use.html','utf8');
+
+//     myReadStream.pipe(res);
+    
+// })
+// //We need to specify a port to listen to for request
+// server.listen(3000,'127.0.0.1')
+// console.log('Now listening to port 3000')
+
+//Video 18
 var http = require('http');
 var fs = require('fs');
 
@@ -53,16 +71,20 @@ var server = http.createServer(function (req,res) {//A way to deal with request 
     console.log('Request was made: ' + req.url);
     //Response Headers syntax
     // res.writeHead(status,content-type)
-    res.writeHead(200,{'Content-Type':'text/html'})
-    var myReadStream = fs.createReadStream(__dirname + '/use.html','utf8');
-
-    myReadStream.pipe(res);
+    res.writeHead(200,{'Content-Type':'application/json'})
+    var myObj ={
+        name:"Akanimoh",
+        job:'Ninja',
+        age:23
+    }
+    //res.end(string or a buffer)
+    res.end(JSON.stringify(myObj));
+   
     
 })
+
 //We need to specify a port to listen to for request
 server.listen(3000,'127.0.0.1')
 console.log('Now listening to port 3000')
-
-//Video 17
 
 
