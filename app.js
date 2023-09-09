@@ -64,6 +64,31 @@
 // console.log('Now listening to port 3000')
 
 //Video 18
+// var http = require('http');
+// var fs = require('fs');
+
+// var server = http.createServer(function (req,res) {//A way to deal with request is using a function
+//     console.log('Request was made: ' + req.url);
+//     //Response Headers syntax
+//     // res.writeHead(status,content-type)
+//     res.writeHead(200,{'Content-Type':'application/json'})
+//     var myObj ={
+//         name:"Akanimoh",
+//         job:'Ninja',
+//         age:23
+//     }
+//     //res.end(string or a buffer)
+//     res.end(JSON.stringify(myObj));
+   
+    
+// })
+
+// //We need to specify a port to listen to for request
+// server.listen(3000,'127.0.0.1')
+// console.log('Now listening to port 3000')
+
+//Video 19
+//Basic Routing
 var http = require('http');
 var fs = require('fs');
 
@@ -71,14 +96,10 @@ var server = http.createServer(function (req,res) {//A way to deal with request 
     console.log('Request was made: ' + req.url);
     //Response Headers syntax
     // res.writeHead(status,content-type)
-    res.writeHead(200,{'Content-Type':'application/json'})
-    var myObj ={
-        name:"Akanimoh",
-        job:'Ninja',
-        age:23
-    }
+    res.writeHead(200,{'Content-Type':'text/plain'})
+
     //res.end(string or a buffer)
-    res.end(JSON.stringify(myObj));
+    res.end('Feed me plantain');
    
     
 })
@@ -86,5 +107,6 @@ var server = http.createServer(function (req,res) {//A way to deal with request 
 //We need to specify a port to listen to for request
 server.listen(3000,'127.0.0.1')
 console.log('Now listening to port 3000')
+
 
 
