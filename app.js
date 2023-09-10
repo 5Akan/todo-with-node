@@ -96,10 +96,15 @@ var server = http.createServer(function (req,res) {//A way to deal with request 
     console.log('Request was made: ' + req.url);
     //Response Headers syntax
     // res.writeHead(status,content-type)
-    res.writeHead(200,{'Content-Type':'text/plain'})
+  if (req.url === '/home' || req.url === '/') {
+      res.writeHead(200,{'Content-type':'text/html'});
+      const myReadStream = fs.createReadStream(__dirname + '/use.html' , 'utf8')
+      myReadStream.pipe(res);
 
-    //res.end(string or a buffer)
-    res.end('Feed me plantain');
+  }else if (req.url === '/contact') {
+    res.writeHead(200,{'Content-type':'text/html'});
+    fs.createReadStream(__dirname + '/contact.html' , 'utf8').pipe(res)
+  } 
    
     
 })
