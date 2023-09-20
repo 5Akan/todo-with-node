@@ -89,29 +89,31 @@
 
 //Video 19
 //Basic Routing
-var http = require('http');
-var fs = require('fs');
+var http =require('http');
+var fs =require('fs');
 
-var server = http.createServer(function (req,res) {//A way to deal with request is using a function
-    console.log('Request was made: ' + req.url);
-    //Response Headers syntax
-    // res.writeHead(status,content-type)
-  if (req.url === '/home' || req.url === '/') {
-      res.writeHead(200,{'Content-type':'text/html'});
-      const myReadStream = fs.createReadStream(__dirname + '/use.html' , 'utf8')
-      myReadStream.pipe(res);
+var server = http.createServer(function (req,res) {
+    console.log('Listening to '+ req.url);
 
-  }else if (req.url === '/contact') {
-    res.writeHead(200,{'Content-type':'text/html'});
-    fs.createReadStream(__dirname + '/contact.html' , 'utf8').pipe(res)
-  } 
-   
+    if (req.url === '/home' || req.url === '/') {
+        res.writeHead(200,{'Content-type':'text/html'});
+        fs.createReadStream(__dirname + '/use.html','utf8').pipe(res);
+
+    }else if(req.url === '/contact'){
+        fs.createReadStream(__dirname +'/contact.html','utf8').pipe(res);
+    }else if(req.url === '/api/ninjas'){
+        var ninjas = [
+            {name:'Akanimoh', Age:23},
+            {name:'Itoro', Age:15}
+        ]
+        res.writeHead(200,{'Content-type':'application/json'});
+        res.end(JSON.stringify(ninjas));
+    }else{
+        res.writeHead(404,{'Content-type':'text/html'});
+        fs.createReadStream(__dirname + '/404.html','utf8').pipe(res);
+    }
     
 })
 
-//We need to specify a port to listen to for request
-server.listen(3000,'127.0.0.1')
+server.listen(3000,'127.0.0.1');
 console.log('Now listening to port 3000')
-
-
-
