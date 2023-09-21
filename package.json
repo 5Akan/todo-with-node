@@ -1,1 +1,26 @@
-{}
+{
+  "name": "js-playlist-master",
+  "description": "CSS and asset files for the Net Ninja YouTube nodejs playlist",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5Akan/node-js-playlist-master.git"
+  },
+  "keywords": [
+    "akan",
+    "ninjas"
+  ],
+  "author": "Akanimoh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/5Akan/node-js-playlist-master/issues"
+  },
+  "homepage": "https://github.com/5Akan/node-js-playlist-master#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
