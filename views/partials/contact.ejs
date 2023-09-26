@@ -8,8 +8,11 @@
         h1{
             font-size: 48px;text-transform: uppercase;letter-spacing: 2px;text-align: center;
         }
-        p{
+        p,li{
             font-size: 16px;text-align: center;
+        }
+        ul{
+            list-style-type: none;padding: 0;
         }
     </style>
     <meta charset="UTF-8">
@@ -18,16 +21,10 @@
     <title>Contact</title>
 </head>
 <body>
+    <%- include ('nav.ejs') %>
     <h1>CONTACT PAGE</h1>
-    <p>The Id to contact is <%= id %></p>
-    <p><strong> Name: </strong><%= data.name%></p>
-    <p><strong> Age: </strong><%= data.age%></p>
 
-    <h2>Hobbies</h2>
-    <ul>
-        <% data.hobbies.forEach(function(hobby){%>
-            <li><%= hobby%></li>
-        <% })%>
-    </ul>
+<!-- Video 26 -->
+ 
     </body>
 </html>

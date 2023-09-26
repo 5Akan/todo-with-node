@@ -26,15 +26,17 @@ var app = express();
 app.set('view engine', 'ejs')
 
 app.get('/',function (req,res) {
-    res.send('Our Home Page')
+    res.render('partials/use')
 })
 
 app.get('/contact',function (req,res) {
-    res.send('Our Contact Page')
+    res.render('partials/contact')
 })
 
 app.get('/profile/:id', function (req,res) {
+    // Video 26
     var data = {name:'Akan', age:23, hobbies:['anime','dance','movies']}
-    res.render('profile',{id:req.params.id,data:data});
+    res.render('partials/profile',{id:req.params.id,data:data});
 })
 app.listen(3000);
+// Video 27
