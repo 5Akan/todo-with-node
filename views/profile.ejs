@@ -22,5 +22,12 @@
     <p>The Id to contact is <%= id %></p>
     <p><strong> Name: </strong><%= data.name%></p>
     <p><strong> Age: </strong><%= data.age%></p>
-</body>
+
+    <h2>Hobbies</h2>
+    <ul>
+        <% data.hobbies.forEach(function(hobby){%>
+            <li><%= hobby%></li>
+        <% })%>
+    </ul>
+    </body>
 </html>

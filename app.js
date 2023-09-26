@@ -34,7 +34,7 @@ app.get('/contact',function (req,res) {
 })
 
 app.get('/profile/:id', function (req,res) {
-    var data = {name:'Akan', age:23}
+    var data = {name:'Akan', age:23, hobbies:['anime','dance','movies']}
     res.render('profile',{id:req.params.id,data:data});
 })
 app.listen(3000);
