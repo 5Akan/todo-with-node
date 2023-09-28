@@ -31,7 +31,8 @@ app.get('/',function (req,res) {
 })
 
 app.get('/contact',function (req,res) {
-    res.render('partials/contact')
+    
+    res.render('partials/contact',{qs: req.query})
 })
 
 app.get('/profile/:id', function (req,res) {
