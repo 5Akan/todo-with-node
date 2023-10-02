@@ -20,8 +20,11 @@
 //Video 24
 //Were using template engines
 var express = require('express');
-
+var bodyParser = require('body-parser')
 var app = express();
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+//Use urlencodedParser(which is a piece of middlewear) in our post handler for our /contact
 
 app.set('view engine', 'ejs')
 app.use('/assets',express.static('assets'))
@@ -34,6 +37,13 @@ app.get('/contact',function (req,res) {
     
     res.render('partials/contact',{qs: req.query})
 })
+
+//6:14 in Video 30
+app.get('/contact',urlencodedParser,function (req,res) {
+    
+    res.render('partials/contact',{qs: req.query})
+})
+
 
 app.get('/profile/:id', function (req,res) {
     // Video 26
