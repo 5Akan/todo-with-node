@@ -39,8 +39,11 @@ app.get('/contact',function (req,res) {
 })
 
 //6:14 in Video 30
-app.get('/contact',urlencodedParser,function (req,res) {
-    
+//When we click submit, the datas in the form of contact
+//is parsed by urlencodedParser 
+app.post('/contact',urlencodedParser,function (req,res) {
+    //Gets the data from urlencodedParser to the body
+    console.log(req.body)
     res.render('partials/contact',{qs: req.query})
 })
 
