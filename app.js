@@ -44,7 +44,7 @@ app.get('/contact',function (req,res) {
 app.post('/contact',urlencodedParser,function (req,res) {
     //Gets the data from urlencodedParser to the body
     console.log(req.body)
-    res.render('partials/contact',{qs: req.query})
+    res.render('partials/contact-success',{data: req.body})
 })
 
 

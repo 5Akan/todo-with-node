@@ -22,18 +22,10 @@
 </head>
 <body>
     <%- include ('nav.ejs') %>
-    <h1>CONTACT PAGE</h1>
-    <p><%= qs.dept %></p>
-<!-- Video 26 -->
-<!-- When we click submit on the form it sends a post request to the /contact url -->
-    <form id="contact-form" method="POST" action="/contact">
-        <label for="who">Who do you want to contact?</label>
-        <input type="text" name="who" value = "<%= qs.name %>">
-        <label for="department">Which department ?</label>
-        <input type="text" name="department" value = "<%= qs.dept %>">
-        <label for="email">Your Email :</label>
-        <input type="email" name="email"/>
-        <input type="submit" value="submit"/>  
-    </form>
+    <h1>Contact Success</h1>
+    <p>Thanks for getting in touch</p>
+    <p>You've contacted <%= data.who%></p>
+    <p> In the department of <%= data.department%></p>
+    <p>We will reply to you at <%= data.email%></p>
     </body>
 </html>
