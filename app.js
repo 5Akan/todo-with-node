@@ -1,11 +1,17 @@
-var time = 0;
-var timer = setInterval(function (params) {
-    time +=2;
-    console.log(time + ' seconds have passed');
-    if(time>5){
-        clearInterval(timer);
-    }
-},2000);
+var express = require('express');
 
-console.log(__dirname)
-console.log(__filename)
+var app = express();
+
+//set up template engines
+
+app.set('view engine', 'ejs');
+
+//static files
+app.use(express.static('./public'));
+//The above isnt route specific ,ie  all routes are mapped to it
+//express.static() is a function built into express to serve up static files
+
+//Listen to port
+app.listen(3000);
+console.log('Listening to port 3000')
+
